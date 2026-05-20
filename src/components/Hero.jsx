@@ -151,7 +151,6 @@ export default function Hero() {
                 </div>
                 <div className="addr-phone-row">
                   <a href="tel:9859853853" className="addr-phone-num">9859853853</a>
-                  <a href="https://wa.me/919859853853" className="addr-wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 9859853853"><FaWhatsapp size={13} /></a>
                 </div>
               </div>
             </div>
