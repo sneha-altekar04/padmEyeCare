@@ -1,0 +1,196 @@
+/* ===== TIMING SECTION ===== */
+.timing-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.timing-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* GRID */
+.timing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* CARD BASE */
+.timing-card {
+  border-radius: 20px;
+  padding: 32px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s;
+}
+
+.timing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+/* CHECKUP CARD */
+.checkup-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* OPERATION CARD */
+.operation-card {
+  background: linear-gradient(135deg, #0f766e 0%, #0f9fa8 100%);
+  color: white;
+}
+
+/* NOTICE CARD */
+.notice-card {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+/* CARD HEADER */
+.timing-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.timing-icon {
+  font-size: 28px;
+  width: 52px;
+  height: 52px;
+  background: rgba(15, 159, 168, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.operation-card .timing-icon {
+  background: rgba(255,255,255,0.2);
+}
+
+.notice-card .timing-icon {
+  background: #fed7aa;
+}
+
+.timing-card-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.operation-card .timing-card-header h3 {
+  color: white;
+}
+
+.notice-card .timing-card-header h3 {
+  color: #c2410c;
+}
+
+/* DAY BADGE */
+.timing-day-badge {
+  display: inline-block;
+  background: #e0f7fa;
+  color: #0f766e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* SLOTS */
+.timing-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.slot-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.slot-time {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.morning {
+  background: #fef3c7;
+}
+
+.evening {
+  background: #ede9fe;
+}
+
+.operation {
+  background: rgba(255,255,255,0.2);
+}
+
+.operation .slot-time {
+  color: white;
+  font-size: 17px;
+}
+
+/* NOTICE */
+.notice-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #c2410c;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.notice-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.call-btn {
+  display: block;
+  text-align: center;
+  background: #f97316;
+  color: white;
+  text-decoration: none;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.call-btn:hover {
+  background: #ea6c08;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .timing-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timing-section {
+    padding: 50px 16px;
+  }
+
+  .timing-card {
+    padding: 24px 20px;
+  }
+}

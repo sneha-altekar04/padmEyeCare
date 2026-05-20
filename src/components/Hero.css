@@ -1,0 +1,502 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+}
+
+/* 🎥 VIDEO */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* 🌑 OVERLAY (FOR TEXT VISIBILITY) */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 90vh;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 70, 80, 0.88) 0%,
+    rgba(0, 120, 130, 0.55) 60%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+/* CONTENT */
+.hero-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 44px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
+  gap: 34px;
+  align-items: center;
+}
+
+.hero-left {
+  color: white;
+  max-width: 620px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* BADGE */
+.hero-badge {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.2), rgba(245, 158, 11, 0.2));
+  border: 1px solid rgba(249, 115, 22, 0.72);
+  color: #ffcc95;
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(7, 20, 36, 0.2);
+  align-self: flex-start;
+}
+
+.hero-left h1 {
+  font-size: clamp(36px, 4.4vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 12ch;
+}
+
+.hero-left p {
+  margin: 18px 0 26px;
+  font-size: 18px;
+  opacity: 0.94;
+  line-height: 1.6;
+  max-width: 34ch;
+}
+
+.hero-gallery {
+  width: 100%;
+}
+
+.hero-gallery-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 22px 58px rgba(6, 22, 34, 0.42);
+  background: rgba(0, 0, 0, 0.24);
+  position: relative;
+  min-height: 360px;
+}
+
+.doctor-float-card {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(191, 219, 254, 0.45);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.68), rgba(14, 116, 144, 0.64));
+  backdrop-filter: blur(4px);
+  box-shadow: 0 14px 34px rgba(1, 12, 28, 0.45);
+  animation: doctorCardFloat 4.2s ease-in-out infinite;
+}
+
+.doctor-mini-figure {
+  width: 40px;
+  height: 42px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.doctor-head {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffd7b5;
+  box-shadow: inset 0 -2px 0 rgba(187, 112, 74, 0.35);
+}
+
+.doctor-body {
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  width: 30px;
+  height: 26px;
+  border-radius: 12px 12px 8px 8px;
+  background: linear-gradient(180deg, #f8fafc, #dbeafe);
+}
+
+.doctor-stetho {
+  position: absolute;
+  left: 14px;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0f172a;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.75;
+  animation: stethoPulse 2.1s ease-in-out infinite;
+}
+
+.doctor-float-copy {
+  display: grid;
+  gap: 2px;
+  color: #f8fafc;
+}
+
+.doctor-float-copy strong {
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.doctor-float-copy span {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.55s ease, transform 0.65s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-dot.active {
+  background: #f97316;
+  transform: scale(1.2);
+}
+
+/* HERO POINTS */
+.hero-points {
+  display: flex;
+  gap: 20px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-points span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.check {
+  color: #4ade80;
+  font-size: 14px;
+}
+
+/* ===== MAP SECTION ===== */
+.map-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0fdff 0%, #e0f8ff 100%);
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(360px, 1.1fr) minmax(260px, 320px);
+  gap: 30px;
+  margin-top: 40px;
+  min-height: 420px;
+  align-items: stretch;
+}
+
+/* ADDRESS CARD */
+.address-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.address-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.addr-icon {
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.address-item h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.address-item p {
+  font-size: 14px;
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.address-item a {
+  font-size: 15px;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.address-item a:hover {
+  color: #1e293b;
+}
+
+.directions-btn {
+  display: block;
+  text-align: center;
+  background: #2D2363;
+  color: white;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: auto;
+}
+
+.directions-btn:hover {
+  background: #2D2363;
+  transform: translateY(-2px);
+}
+
+/* MAP FRAME */
+.map-frame-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 380px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  border: 1px solid #dbe7eb;
+  background: #fff;
+}
+
+.hospital-photo-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 380px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  border: 1px solid #dbe7eb;
+  background: #fff;
+  display: flex;
+}
+
+.hospital-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map-frame-wrap,
+  .hospital-photo-wrap {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-section {
+    padding: 50px 16px;
+  }
+}
+
+
+@keyframes doctorCardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes stethoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-left {
+    text-align: center;
+    margin: auto;
+    min-height: auto;
+    align-items: center;
+  }
+
+  .hero-badge {
+    align-self: center;
+  }
+
+  .hero-left p {
+    font-size: 16px;
+    max-width: 44ch;
+  }
+
+  .hero-points {
+    justify-content: center;
+  }
+
+  .hero-gallery-frame {
+    min-height: 290px;
+  }
+
+  .doctor-float-card {
+    left: 12px;
+    bottom: 12px;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-container {
+    padding: 28px 16px;
+  }
+
+  .hero-left h1 {
+    font-size: 34px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-bottom: 14px;
+  }
+
+  .hero-gallery-frame {
+    min-height: 230px;
+  }
+
+  .doctor-float-card {
+    gap: 8px;
+  }
+
+  .doctor-mini-figure {
+    width: 33px;
+    height: 36px;
+  }
+
+  .doctor-head {
+    left: 9px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .doctor-body {
+    left: 4px;
+    top: 12px;
+    width: 25px;
+    height: 22px;
+  }
+
+  .doctor-stetho {
+    left: 12px;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .doctor-float-copy strong {
+    font-size: 12px;
+  }
+
+  .doctor-float-copy span {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-float-card,
+  .doctor-stetho {
+    animation: none;
+  }
+}
+
