@@ -102,8 +102,12 @@ export default function HospitalInfo() {
                 <p className="section-label">Patient care</p>
                 <h4>Compassionate pediatric eye care with a modern clinical approach.</h4>
                 <p>
-                  Structured for quick scanning, this section keeps the doctor profile,
-                  qualifications, and surgical expertise clearly separated for a hospital website.
+                  Vision is crucial to how your child learns, plays, and grows. 
+                  Our pediatric ophthalmology department pairs the latest clinical innovations 
+                  and state-of-the-art imaging with a deep understanding of childhood development. 
+                  We deliver highly accurate diagnoses and tailored treatment plans, 
+                  all delivered by experts who know exactly how to make advanced clinical care feel like a 
+                  breeze for kids.
                 </p>
               </div>
             </div>
