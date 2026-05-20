@@ -283,7 +283,7 @@
 .timing-ticker-wrap {
   display: flex;
   align-items: center;
-  background: #0f766e;
+  background: #2D2363;
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 26px;
@@ -296,7 +296,7 @@
   align-items: center;
   gap: 6px;
   padding: 0 16px;
-  background: #0b5d58;
+  background: #1e1745;
   color: #fff;
   font-size: 11px;
   font-weight: 800;
@@ -429,7 +429,7 @@
 .addr-icon {
   width: 40px;
   height: 40px;
-  background: #ccfbf1;
+  background: #e0f8ff;
   color: #0f766e;
   border-radius: 10px;
   display: flex;
@@ -492,7 +492,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #ccfbf1;
+  background: #e0f8ff;
   color: #0f766e;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;

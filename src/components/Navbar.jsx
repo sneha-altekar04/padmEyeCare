@@ -81,7 +81,14 @@ export default function Navbar() {
         </nav>
 
         {/* CENTER BRAND */}
-        <div className="nav-logo">
+        <Link
+          to="/"
+          className="nav-logo"
+          onClick={() => {
+            setMenuOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <img src="/logo.png" alt="Padm Eye Care logo" />
           <div className="brand-text">
             <span className="brand-name">{t("nav_title")}</span>
@@ -89,7 +96,7 @@ export default function Navbar() {
               {isMarathi ? "नेत्रतपासणी | मोतीबिंदू | बालरोग नेत्रचिकित्सा" : "Eye Checkup | Cataract | Pediatric Ophthalmology"}
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* RIGHT SIDE */}
         <div className="nav-right">

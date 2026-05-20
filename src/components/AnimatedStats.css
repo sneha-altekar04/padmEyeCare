@@ -22,7 +22,7 @@
 .lens-1 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #0f9fa8 0%, transparent 70%);
+  background: radial-gradient(circle, #2D2363 0%, transparent 70%);
   top: -100px;
   left: -100px;
   animation: floatLens1 12s ease-in-out infinite;
@@ -108,13 +108,13 @@
 
 .stat-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(15, 159, 168, 0.12);
+  box-shadow: 0 14px 36px rgba(45, 35, 99, 0.12);
 }
 
 .stat-number {
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 900;
-  background: linear-gradient(135deg, #0f766e 0%, #0f9fa8 100%);
+  background: linear-gradient(135deg, #2D2363 0%, #3d3190 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

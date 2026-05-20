@@ -3,9 +3,9 @@
   right: 20px;
   bottom: 20px;
   z-index: 1200;
-  --chat-primary: #0f766e;
-  --chat-primary-dark: #0b5d58;
-  --chat-soft: #ecf9f8;
+  --chat-primary: #2D2363;
+  --chat-primary-dark: #1e1745;
+  --chat-soft: #f0eeff;
 }
 
 .chat-fab {
@@ -26,7 +26,7 @@
 }
 
 .chat-fab:hover {
-  background: linear-gradient(135deg, #115e59, #0f766e) !important;
+  background: linear-gradient(135deg, #1e1745, #2D2363) !important;
 }
 
 .chat-panel {
@@ -81,13 +81,13 @@
   gap: 6px;
   padding: 10px 12px;
   background: #f3fbfa;
-  border-bottom: 1px solid #e2f1f0;
+  border-bottom: 1px solid #e0f8ff;
 }
 
 .chat-quick-actions button {
   border: 1px solid #bee6e2;
   background: #fff;
-  color: #0c5f5a;
+  color: #3d3190;
   border-radius: 999px;
   padding: 7px 11px;
   font-size: 12px;
@@ -97,7 +97,7 @@
 .chat-body {
   padding: 12px;
   overflow-y: auto;
-  background: linear-gradient(180deg, #fbfefe 0%, #f2fbfa 100%);
+  background: linear-gradient(180deg, #fbfefe 0%, #f3fbfa 100%);
 }
 
 .chat-msg {
@@ -121,8 +121,8 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #d8f0ed;
-  color: #0f766e;
+  background: #d6ecea;
+  color: #2D2363;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -159,7 +159,7 @@
 
 .chat-footer {
   padding: 10px 12px 12px;
-  border-top: 1px solid #e2f1ef;
+  border-top: 1px solid #e0f8ff;
   background: #fff;
 }
 
@@ -167,7 +167,7 @@
   width: 100%;
   border: 1px solid #9bd7d2;
   background: var(--chat-soft);
-  color: #0b5d58;
+  color: #1e1745;
   border-radius: 10px;
   padding: 9px 11px;
   font-size: 12px;
@@ -187,7 +187,7 @@
 .chat-input-row input {
   flex: 1;
   height: 38px;
-  border: 1px solid #c6e3e0;
+  border: 1px solid #bee6e2;
   border-radius: 10px;
   padding: 0 10px;
   font-size: 13px;
@@ -212,13 +212,13 @@
 }
 
 .quick-faq-btn {
-  background: #0f766e !important;
+  background: #2D2363 !important;
   color: #fff !important;
-  border-color: #0f766e !important;
+  border-color: #2D2363 !important;
 }
 
 .quick-faq-btn:hover {
-  background: #0b5d58 !important;
+  background: #1e1745 !important;
 }
 
 .chat-options {
@@ -231,7 +231,7 @@
 .chat-option-chip {
   border: 1px solid #bee6e2;
   background: #f0fafa;
-  color: #0c5f5a;
+  color: #3d3190;
   border-radius: 999px;
   padding: 5px 10px;
   font-size: 11px;
@@ -242,8 +242,8 @@
 }
 
 .chat-option-chip:hover {
-  background: #0f766e;
+  background: #2D2363;
   color: #fff;
-  border-color: #0f766e;
+  border-color: #2D2363;
 }
 
