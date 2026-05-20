@@ -1,0 +1,148 @@
+/* ── Overlay ──────────────────────────────────────────── */
+.tech-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 40, 0.72);
+  backdrop-filter: blur(3px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: techFadeIn 0.18s ease;
+}
+
+@keyframes techFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal card ───────────────────────────────────────── */
+.tech-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 32px 32px;
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  animation: techSlideUp 0.22s ease;
+}
+
+@keyframes techSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Close button ─────────────────────────────────────── */
+.tech-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 20px;
+  line-height: 1;
+  color: #475569;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tech-close:hover {
+  background: #0f766e;
+  color: #fff;
+  border-color: #0f766e;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.tech-title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.tech-subtitle {
+  margin: 0 0 24px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ── Grid ─────────────────────────────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ── Equipment card ───────────────────────────────────── */
+.tech-card {
+  border: 1px solid #e2f1f0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f9fffe;
+  transition: box-shadow 0.2s;
+}
+
+.tech-card:hover {
+  box-shadow: 0 6px 24px rgba(15, 118, 110, 0.15);
+}
+
+.tech-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e8f8f6;
+}
+
+.tech-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tech-card:hover .tech-img {
+  transform: scale(1.04);
+}
+
+.tech-card-info {
+  padding: 14px 16px;
+}
+
+.tech-name {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.35;
+}
+
+.tech-desc {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .tech-modal {
+    padding: 28px 18px 24px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-title {
+    font-size: 19px;
+  }
+}

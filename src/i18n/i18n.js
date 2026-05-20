@@ -6,7 +6,7 @@ const resources = {
     translation: {
       nav_discover: "Discover",
       nav_doctors: "Doctors",
-      nav_services: "Services",
+      nav_services: "Treatments",
       nav_contact: "Contact",
       nav_book: "Book Appointment",
       nav_title: "Padm Superspeciality Eye Care",
@@ -23,8 +23,8 @@ const resources = {
       hero_stat2: "Expert Specialist",
       hero_stat3: "Cashless Available",
 
-      services_heading: "Our Services",
-      services_sub: "Comprehensive eye care under one roof",
+      services_heading: "Treatments",
+      services_sub: "Comprehensive eye treatments under one roof",
       treatments_modal_heading: "Our Treatments",
       treatments_modal_sub:
         "Tap any treatment to view images and complete details",
@@ -63,6 +63,8 @@ const resources = {
       contact_phone1: "7030775791",
       contact_phone2: "9859853853",
       contact_email: "padmeyecare@gmail.com",
+      contact_doctor_reg_label: "Doctor Registration",
+      contact_doctor_reg_value: "MH/RAI/NH1132",
 
       footer_rights:
         "Copyright 2026 Padm Superspeciality Eye Care. All Rights Reserved.",
@@ -73,7 +75,7 @@ const resources = {
     translation: {
       nav_discover: "शोधा",
       nav_doctors: "डॉक्टर",
-      nav_services: "सेवा",
+      nav_services: "उपचार",
       nav_contact: "संपर्क",
       nav_book: "अपॉइंटमेंट बुक करा",
       nav_title: "पद्म सुपरस्पेशालिटी आय केअर",
@@ -90,7 +92,7 @@ const resources = {
       hero_stat2: "तज्ज्ञ विशेषज्ञ",
       hero_stat3: "कॅशलेस सुविधा",
 
-      services_heading: "आमच्या सेवा",
+      services_heading: "उपचार",
       services_sub: "एकाच ठिकाणी सर्व नेत्र उपचार",
       treatments_modal_heading: "आमचे उपचार",
       treatments_modal_sub:
@@ -130,6 +132,8 @@ const resources = {
       contact_phone1: "7030775791",
       contact_phone2: "9859853853",
       contact_email: "padmeyecare@gmail.com",
+      contact_doctor_reg_label: "डॉक्टर नोंदणी क्रमांक",
+      contact_doctor_reg_value: "MH/RAI/NH1132",
 
       footer_rights:
         "कॉपीराइट 2026 पद्म सुपरस्पेशालिटी आय केअर. सर्व हक्क राखीव.",

@@ -1,8 +1,11 @@
-﻿import { useTranslation } from "react-i18next";
+﻿import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import TechnologyPopup from "./TechnologyPopup";
 import "./Footer.css";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const [showTech, setShowTech] = useState(false);
 
   return (
     <footer className="footer">
@@ -17,7 +20,11 @@ export default function Footer() {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/#services">Our Technology</a></li>
+            <li>
+              <button className="footer-tech-btn" onClick={() => setShowTech(true)}>
+                Technology
+              </button>
+            </li>
             <li><a href="/gallery">Gallery</a></li>
             <li><a href="/#treatments">Treatments</a></li>
             <li><a href="/#doctor">Meet Doctors</a></li>
@@ -38,7 +45,7 @@ export default function Footer() {
           <p>Mon – Sat</p>
           <p>🌅 9:30 AM – 12:00 PM</p>
           <p>🌆 5:00 PM – 6:30 PM</p>
-          <p className="footer-note">Tuesday: Call before visiting</p>
+          <p className="footer-note">Call before visiting</p>
         </div>
 
       </div>
@@ -46,6 +53,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>{t("footer_rights")}</p>
       </div>
+
+      {showTech && <TechnologyPopup onClose={() => setShowTech(false)} />}
     </footer>
   );
 }

@@ -237,13 +237,166 @@
 
 /* ===== MAP SECTION ===== */
 .map-section {
-  padding: 80px 20px;
+  padding: 50px 20px;
   background: linear-gradient(135deg, #f0fdff 0%, #e0f8ff 100%);
 }
 
 .map-container {
   max-width: 1200px;
   margin: auto;
+}
+
+/* ===== CONTACT SECTION HEADER ===== */
+.contact-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-section-badge {
+  display: inline-block;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  margin-bottom: 12px;
+}
+
+.contact-section-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.contact-section-header p {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ===== TIMING TICKER ===== */
+.timing-ticker-wrap {
+  display: flex;
+  align-items: center;
+  background: #0f766e;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 26px;
+  height: 42px;
+}
+
+.timing-ticker-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  background: #0b5d58;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  height: 100%;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+
+.timing-ticker-scroller {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.timing-ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: timingTick 32s linear infinite;
+  will-change: transform;
+}
+
+.timing-ticker-wrap:hover .timing-ticker-track {
+  animation-play-state: paused;
+}
+
+.timing-ticker-set {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  color: rgba(255,255,255,0.92);
+  font-size: 13px;
+}
+
+.ttick-seg {
+  padding: 0 12px;
+  font-weight: 500;
+}
+
+.ttick-seg strong {
+  font-weight: 800;
+}
+
+.ttick-dot {
+  color: rgba(255,255,255,0.3);
+  font-size: 10px;
+  user-select: none;
+}
+
+.ttick-bar {
+  color: rgba(255,255,255,0.2);
+  font-size: 18px;
+  padding: 0 6px;
+  user-select: none;
+}
+
+.ttick-phone {
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 0 3px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.ttick-phone:hover {
+  background: rgba(255,255,255,0.26);
+}
+
+.ttick-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 6px;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.ttick-wa:hover {
+  background: #1ebe5d;
+  transform: scale(1.1);
+}
+
+@keyframes timingTick {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .map-layout {
@@ -263,6 +416,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .address-item {
@@ -272,10 +427,10 @@
 }
 
 .addr-icon {
-  font-size: 22px;
-  width: 44px;
-  height: 44px;
-  background: rgba(255,255,255,0.18);
+  width: 40px;
+  height: 40px;
+  background: #ccfbf1;
+  color: #0f766e;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -284,12 +439,12 @@
 }
 
 .address-item h4 {
-  font-size: 13px;
-  font-weight: 600;
-  color: #1e293b;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
   margin: 0 0 4px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .address-item p {
@@ -307,8 +462,50 @@
   transition: color 0.2s;
 }
 
-.address-item a:hover {
+.addr-phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.addr-phone-row:last-child {
+  margin-bottom: 0;
+}
+
+.addr-phone-num {
+  font-size: 15px;
   color: #1e293b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.addr-phone-num:hover {
+  color: #0f766e;
+}
+
+.addr-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ccfbf1;
+  color: #0f766e;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.addr-wa-btn:hover {
+  background: #0f766e;
+  color: #fff;
+}
+
+.address-item a:hover {
+  color: #0f766e;
 }
 
 .directions-btn {
@@ -359,6 +556,10 @@
 
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
+  .timing-ticker-label {
+    display: none;
+  }
+
   .map-layout {
     grid-template-columns: 1fr;
   }
@@ -373,8 +574,11 @@
   .map-section {
     padding: 50px 16px;
   }
-}
 
+  .hero-timing-card {
+    padding: 22px 18px;
+  }
+}
 
 @keyframes doctorCardFloat {
   0%,

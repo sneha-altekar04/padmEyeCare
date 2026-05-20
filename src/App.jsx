@@ -5,7 +5,6 @@ import AnimatedStats from "./components/AnimatedStats";
 import GallerySection from "./components/GallerySection";
 import ServicesSlider from "./components/Services";
 import HospitalInfo from "./components/HospitalInfo";
-import Timing from "./components/Timing";
 import Insurance from "./components/Insurance";
 // import MapSection from "./components/MapSection";
 import Footer from "./components/Footer";
@@ -19,7 +18,6 @@ function HomePage() {
       <Navbar />
       <Hero />
       <HospitalInfo />
-      <Timing />
       <ServicesSlider />
       <Insurance />
       <AnimatedStats />

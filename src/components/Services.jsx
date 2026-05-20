@@ -81,35 +81,18 @@ export default function Services() {
   const isMarathi = i18n.language === "mr";
   const [activeTreatment, setActiveTreatment] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [showTreatmentsOverview, setShowTreatmentsOverview] = useState(false);
 
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
         setActiveTreatment(null);
-        setShowTreatmentsOverview(false);
-      }
-    };
-
-    const handleOpenFromMenu = () => {
-      setShowTreatmentsOverview(true);
-    };
-
-    const handleHashOpen = () => {
-      if (window.location.hash === "#treatments") {
-        handleOpenFromMenu();
       }
     };
 
     window.addEventListener("keydown", handleEscape);
-    window.addEventListener("open-treatment-popup", handleOpenFromMenu);
-    window.addEventListener("hashchange", handleHashOpen);
-    handleHashOpen();
 
     return () => {
       window.removeEventListener("keydown", handleEscape);
-      window.removeEventListener("open-treatment-popup", handleOpenFromMenu);
-      window.removeEventListener("hashchange", handleHashOpen);
     };
   }, []);
 
@@ -151,55 +134,6 @@ export default function Services() {
             </button>
           ))}
         </div>
-
-        {showTreatmentsOverview && (
-          <div className="treatments-overview-backdrop" onClick={() => setShowTreatmentsOverview(false)}>
-            <div
-              className="treatments-overview-modal"
-              role="dialog"
-              aria-modal="true"
-              aria-label={t("treatments_modal_heading")}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="treatments-overview-header">
-                <div className="treatments-overview-title-wrap">
-                  <h2>{t("treatments_modal_heading")}</h2>
-                  <p>{t("treatments_modal_sub")}</p>
-                </div>
-                <button
-                  type="button"
-                  className="modal-close"
-                  onClick={() => setShowTreatmentsOverview(false)}
-                  aria-label={t("treatments_modal_close")}
-                >
-                  <X size={18} />
-                </button>
-              </div>
-              <div className="treatments-overview-grid">
-                {serviceData.map((service, index) => (
-                  <button
-                    type="button"
-                    className="treatments-overview-card"
-                    key={index}
-                    style={{ animationDelay: `${0.06 * index}s` }}
-                    onClick={() => {
-                      setShowTreatmentsOverview(false);
-                      openTreatmentModal(service);
-                    }}
-                  >
-                    <div className="treatments-overview-icon">{service.icon}</div>
-                    <div className="treatments-overview-info">
-                      <h3>{isMarathi ? service.mr : service.en}</h3>
-                      <p className="treatments-overview-alt-lang">{isMarathi ? service.en : service.mr}</p>
-                      <p>{isMarathi ? service.desc_mr : service.desc_en}</p>
-                    </div>
-                    <span className="treatments-overview-arrow">›</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
 
         {activeTreatment && (
           <div className="treatment-modal-backdrop" onClick={() => setActiveTreatment(null)}>

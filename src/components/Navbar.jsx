@@ -3,23 +3,46 @@ import { Link } from "react-router-dom";
 import { Phone, MapPin, Menu, X, Mail } from "lucide-react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import TechnologyPopup from "./TechnologyPopup";
 import "./navbar.css";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showTech, setShowTech] = useState(false);
   const isMarathi = i18n.language === "mr";
 
   const toggleLang = () => {
     i18n.changeLanguage(isMarathi ? "en" : "mr");
   };
 
+  const handleSectionNavigation = (event, href) => {
+    if (!href.startsWith("/#")) return;
+
+    event.preventDefault();
+    setMenuOpen(false);
+
+    const sectionId = href.replace("/#", "");
+
+    if (window.location.pathname !== "/") {
+      window.location.href = href;
+      return;
+    }
+
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `/#${sectionId}`);
+    }
+  };
+
   const navLinks = [
-    { label: "Our Technology", href: "/#services" },
+    { label: "Technology", href: "/#services" },
     { label: "Gallery", href: "/gallery" },
     { label: "Treatments", href: "/#treatments" },
-    { label: "Meet Doctors", href: "/#doctor" },
-    { label: "Contact Us", href: "/#contact" },
+    { label: "Doctors", href: "/#doctor" },
+    { label: "Insurance", href: "/#insurance" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -28,8 +51,16 @@ export default function Navbar() {
 
         {/* LEFT MENU — desktop */}
         <nav className="nav-left">
-          {navLinks.map((link) => 
-            link.href === "/gallery" ? (
+          {navLinks.map((link) =>
+            link.label === "Technology" ? (
+              <button
+                key={link.label}
+                className="nav-tech-btn"
+                onClick={() => setShowTech(true)}
+              >
+                {link.label}
+              </button>
+            ) : link.href === "/gallery" ? (
               <Link
                 key={link.label}
                 to={link.href}
@@ -41,12 +72,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => {
-                  if (link.href === "/#treatments") {
-                    window.dispatchEvent(new CustomEvent("open-treatment-popup"));
-                  }
-                  setMenuOpen(false);
-                }}
+                onClick={(event) => handleSectionNavigation(event, link.href)}
               >
                 {link.label}
               </a>
@@ -111,7 +137,15 @@ export default function Navbar() {
       {/* MOBILE MENU DRAWER */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         {navLinks.map((link) =>
-          link.href === "/gallery" ? (
+          link.label === "Technology" ? (
+            <button
+              key={link.label}
+              className="mobile-link mobile-tech-btn"
+              onClick={() => { setShowTech(true); setMenuOpen(false); }}
+            >
+              {link.label}
+            </button>
+          ) : link.href === "/gallery" ? (
             <Link
               key={link.label}
               to={link.href}
@@ -125,12 +159,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               className="mobile-link"
-              onClick={() => {
-                if (link.href === "/#treatments") {
-                  window.dispatchEvent(new CustomEvent("open-treatment-popup"));
-                }
-                setMenuOpen(false);
-              }}
+              onClick={(event) => handleSectionNavigation(event, link.href)}
             >
               {link.label}
             </a>
@@ -140,7 +169,26 @@ export default function Navbar() {
           <a href="tel:7030775791"><Phone size={14} /> 7030775791</a>
           <a href="tel:9859853853"><Phone size={14} /> 9859853853</a>
         </div>
+        <div className="mobile-icons">
+          <a href="tel:7030775791" className="mobile-icon-btn" title="Call Us"><Phone size={18} /></a>
+          <a href="/#contact" className="mobile-icon-btn" title="Location" onClick={(e) => handleSectionNavigation(e, "/#contact")}><MapPin size={18} /></a>
+          <a href="https://www.instagram.com" className="mobile-icon-btn" title="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram size={18} /></a>
+          <a href="mailto:padmeyecare@gmail.com" className="mobile-icon-btn" title="Email"><Mail size={18} /></a>
+        </div>
       </div>
+
+      {/* FLOATING WHATSAPP — mobile only */}
+      <a
+        href="https://wa.me/917030775791"
+        className="float-wa-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp size={26} />
+      </a>
+
+      {showTech && <TechnologyPopup onClose={() => setShowTech(false)} />}
     </header>
   );
 }

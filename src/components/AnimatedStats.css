@@ -93,7 +93,7 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
@@ -143,10 +143,6 @@
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-  }
-
-  .stats-grid > :last-child {
-    grid-column: 1 / -1;
   }
 
   .stat-card {

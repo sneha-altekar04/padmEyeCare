@@ -25,12 +25,12 @@
 .nav-left {
   order: 2;
   display: flex;
-  gap: clamp(10px, 1.1vw, 18px);
+  gap: clamp(6px, 0.8vw, 14px);
   align-items: center;
   flex-wrap: nowrap;
   min-width: 0;
   flex-shrink: 0;
-  margin-left: -10px;
+  margin-left: 0px;
   margin-right: auto;
 }
 
@@ -38,11 +38,55 @@
   text-decoration: none;
   color: #1e293b;
   font-weight: 600;
-  font-size: clamp(14px, 0.95vw, 15px);
+  font-size: clamp(13px, 0.85vw, 14px);
   position: relative;
   padding-bottom: 3px;
   white-space: nowrap;
   transition: color 0.2s;
+}
+
+/* Technology popup trigger — same look as nav links */
+.nav-tech-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: clamp(13px, 0.85vw, 14px);
+  position: relative;
+  padding: 0 0 3px;
+  white-space: nowrap;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.nav-tech-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0f9fa8;
+  transition: width 0.25s ease;
+}
+
+.nav-tech-btn:hover {
+  color: #0f9fa8;
+}
+
+.nav-tech-btn:hover::after {
+  width: 100%;
+}
+
+/* Mobile drawer Technology button */
+.mobile-tech-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
 }
 
 .nav-left a::after {
@@ -228,8 +272,8 @@
 }
 
 .mobile-menu.open {
-  max-height: 400px;
-  padding: 16px 20px 20px;
+  max-height: 600px;
+  padding: 16px 20px 24px;
 }
 
 .mobile-link {
@@ -263,12 +307,64 @@
   font-weight: 500;
 }
 
+.mobile-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.mobile-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mobile-icon-btn:hover {
+  background: #0f9fa8;
+  color: #fff;
+}
+
+/* FLOATING WHATSAPP BUTTON — mobile only */
+.float-wa-btn {
+  display: none;
+  position: fixed;
+  bottom: 22px;
+  left: 18px;
+  z-index: 1200;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.float-wa-btn:hover {
+  background: #1ebe5d;
+  transform: scale(1.08);
+}
+
+@media (max-width: 1200px) {
+  .float-wa-btn {
+    display: flex;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .nav-container {
-    height: 84px;
-  }
-
   .brand-name {
     font-size: 18px;
   }
@@ -278,35 +374,11 @@
   }
 }
 
-@media (max-width: 1240px) {
-  .nav-container {
-    gap: 10px;
-  }
-
-  .nav-left {
-    gap: 10px;
-  }
-
-  .nav-right {
-    gap: 8px;
-  }
-
-  .icon {
-    width: 34px;
-    height: 34px;
-  }
-
-  .lang-toggle {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .nav-container {
     display: grid;
     grid-template-columns: auto 1fr;
-    height: 74px;
+    height: 84px;
     gap: 10px;
   }
 

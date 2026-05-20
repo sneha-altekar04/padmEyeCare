@@ -61,7 +61,7 @@ export default function Insurance() {
   const companies = isMarathi ? companies_mr : companies_en;
 
   return (
-    <section className="insurance">
+    <section className="insurance" id="insurance">
       <div className="insurance-container">
 
         <h2>{t("insurance_heading")}</h2>

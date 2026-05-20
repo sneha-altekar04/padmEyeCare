@@ -1,5 +1,7 @@
 ﻿// import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Clock, Phone, MapPin, Mail, Award } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import "./Hero.css";
 
 export default function Hero() {
@@ -80,33 +82,91 @@ export default function Hero() {
     // </section>
     <section className="map-section" id="contact">
       <div className="map-container">
-        {/* <div className="section-header">
-          <div className="hero-badge">{t("hero_badge")}</div>
-          <h1>{t("hero_heading")}</h1>
-          <p>{t("hero_desc")}</p>
-        </div> */}
+
+        {/* TIMING TICKER */}
+        <div className="timing-ticker-wrap">
+          <div className="timing-ticker-label">
+            <Clock size={13} strokeWidth={2.5} />
+            <span>{t("timing_heading")}</span>
+          </div>
+          <div className="timing-ticker-scroller" aria-label="Hospital timings">
+            <div className="timing-ticker-track">
+              <span className="timing-ticker-set">
+                <span className="ttick-seg"><strong>{t("timing_checkup")}</strong></span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_days")}</span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_morning")}</span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_evening")}</span>
+                <span className="ttick-bar">|</span>
+                <span className="ttick-seg"><strong>{t("timing_operation")}</strong></span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_op_time")}</span>
+                <span className="ttick-bar">|</span>
+                <a href="tel:7030775791" className="ttick-phone">7030775791</a>
+                <span className="ttick-dot">&bull;</span>
+                <a href="tel:9859853853" className="ttick-phone">9859853853</a>
+                <span className="ttick-bar">|</span>
+              </span>
+              <span className="timing-ticker-set" aria-hidden="true">
+                <span className="ttick-seg"><strong>{t("timing_checkup")}</strong></span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_days")}</span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_morning")}</span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_evening")}</span>
+                <span className="ttick-bar">|</span>
+                <span className="ttick-seg"><strong>{t("timing_operation")}</strong></span>
+                <span className="ttick-dot">&bull;</span>
+                <span className="ttick-seg">{t("timing_op_time")}</span>
+                <span className="ttick-bar">|</span>
+                <a href="tel:7030775791" className="ttick-phone" tabIndex={-1}>7030775791</a>
+                <span className="ttick-dot">&bull;</span>
+                <a href="tel:9859853853" className="ttick-phone" tabIndex={-1}>9859853853</a>
+                <span className="ttick-bar">|</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* MAP LAYOUT */}
         <div className="map-layout">
           <div className="address-card">
             <div className="address-item">
-              <span className="addr-icon">📍</span>
+              <span className="addr-icon"><MapPin size={18} /></span>
               <div>
                 <h4>Address</h4>
                 <p>{t("contact_address")}</p>
               </div>
             </div>
             <div className="address-item">
-              <span className="addr-icon">📞</span>
+              <span className="addr-icon"><Phone size={18} /></span>
               <div>
                 <h4>Phone</h4>
-                <a href="tel:7030775791">7030775791</a><br />
-                <a href="tel:9859853853">9859853853</a>
+                <div className="addr-phone-row">
+                  <a href="tel:7030775791" className="addr-phone-num">7030775791</a>
+                  <a href="https://wa.me/917030775791" className="addr-wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 7030775791"><FaWhatsapp size={13} /></a>
+                </div>
+                <div className="addr-phone-row">
+                  <a href="tel:9859853853" className="addr-phone-num">9859853853</a>
+                  <a href="https://wa.me/919859853853" className="addr-wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 9859853853"><FaWhatsapp size={13} /></a>
+                </div>
               </div>
             </div>
             <div className="address-item">
-              <span className="addr-icon">✉️</span>
+              <span className="addr-icon"><Mail size={18} /></span>
               <div>
                 <h4>Email</h4>
                 <a href="mailto:padmeyecare@gmail.com">padmeyecare@gmail.com</a>
+              </div>
+            </div>
+            <div className="address-item">
+              <span className="addr-icon"><Award size={18} /></span>
+              <div>
+                <h4>{t("contact_doctor_reg_label")}</h4>
+                <p>{t("contact_doctor_reg_value")}</p>
               </div>
             </div>
             <a
@@ -115,7 +175,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="directions-btn"
             >
-              📍 Get Directions
+              Get Directions
             </a>
           </div>
           <div className="map-frame-wrap">

@@ -77,7 +77,8 @@
 
 .chat-quick-actions {
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
   padding: 10px 12px;
   background: #f3fbfa;
   border-bottom: 1px solid #e2f1f0;
@@ -137,6 +138,7 @@
   padding: 9px 11px;
   font-size: 13px;
   line-height: 1.45;
+  white-space: pre-line;
   color: #10313c;
   background: #fff;
   border: 1px solid #d9ecea;
@@ -209,14 +211,39 @@
   cursor: pointer;
 }
 
-@media (max-width: 640px) {
-  .chat-widget {
-    right: 10px;
-    bottom: 10px;
-  }
-
-  .chat-panel {
-    height: 72vh;
-    width: min(360px, calc(100vw - 10px));
-  }
+.quick-faq-btn {
+  background: #0f766e !important;
+  color: #fff !important;
+  border-color: #0f766e !important;
 }
+
+.quick-faq-btn:hover {
+  background: #0b5d58 !important;
+}
+
+.chat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chat-option-chip {
+  border: 1px solid #bee6e2;
+  background: #f0fafa;
+  color: #0c5f5a;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+  transition: background 0.15s, color 0.15s;
+}
+
+.chat-option-chip:hover {
+  background: #0f766e;
+  color: #fff;
+  border-color: #0f766e;
+}
+

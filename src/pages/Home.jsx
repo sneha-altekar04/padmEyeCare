@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import ServicesSlider from "../components/Services";
 import Stats from "../components/Stats";
+import Insurance from "../components/Insurance";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <ServicesSlider />
       <Stats />
+      <Insurance />
     </div>
   );
 };
