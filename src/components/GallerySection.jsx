@@ -2,46 +2,40 @@ import { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./GallerySection.css";
 
-const galleryImages = [
-  "/gallaryphotoes/PUKT0034.JPG",
-  "/gallaryphotoes/PUKT0039.JPG",
-  "/gallaryphotoes/PUKT0041.JPG",
-  "/gallaryphotoes/PUKT0075.JPG",
-  "/gallaryphotoes/PUKT0078.JPG",
-  "/gallaryphotoes/PUKT0233.JPG",
-  "/gallaryphotoes/PUKT0251.JPG",
-  "/gallaryphotoes/PUKT0281.JPG",
-  "/gallaryphotoes/PUKT0321.JPG",
-  "/gallaryphotoes/doctor-profile.jpg",
-  "/gallaryphotoes/PUKT0354.JPG",
-  "/gallaryphotoes/PUKT0443.JPG",
-  "/gallaryphotoes/PUKT0451.JPG",
-  "/gallaryphotoes/PUKT0542.JPG",
-];
+const galleryImages = Object.keys(
+  import.meta.glob("/public/galleryphotoes/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}")
+)
+  .sort((a, b) => a.localeCompare(b))
+  .map((filePath) => filePath.replace("/public", ""));
 
 export default function GallerySection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const totalImages = galleryImages.length;
 
   useEffect(() => {
+    if (!totalImages) return undefined;
+
     const autoRotate = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % galleryImages.length);
+      setActiveIndex((prev) => (prev + 1) % totalImages);
     }, 3600);
 
     return () => window.clearInterval(autoRotate);
-  }, []);
+  }, [totalImages]);
 
-  const activeImage = galleryImages[activeIndex];
+  const activeImage = galleryImages[activeIndex] ?? "";
 
   const thumbnailTrack = useMemo(() => {
     return galleryImages.slice(0, 8);
   }, []);
 
   const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % galleryImages.length);
+    if (!totalImages) return;
+    setActiveIndex((prev) => (prev + 1) % totalImages);
   };
 
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    if (!totalImages) return;
+    setActiveIndex((prev) => (prev - 1 + totalImages) % totalImages);
   };
 
   return (
@@ -59,8 +53,12 @@ export default function GallerySection() {
           </button>
 
           <div className="showcase-main">
-            <img src={activeImage} alt={`Gallery Highlight ${activeIndex + 1}`} loading="lazy" />
-            <div className="showcase-badge">{activeIndex + 1} / {galleryImages.length}</div>
+            {activeImage ? (
+              <img src={activeImage} alt={`Gallery Highlight ${activeIndex + 1}`} loading="lazy" />
+            ) : (
+              <p>No gallery images found in /public/galleryphotoes.</p>
+            )}
+            <div className="showcase-badge">{totalImages ? activeIndex + 1 : 0} / {totalImages}</div>
           </div>
 
           <button className="showcase-nav next" onClick={nextSlide} aria-label="Next photo">
@@ -90,7 +88,7 @@ export default function GallerySection() {
         </div>
 
         <div className="gallery-footer">
-          <span>Animated gallery loaded from gallaryphotoes folder.</span>
+          <span>Animated gallery loaded from galleryphotoes folder.</span>
         </div>
       </div>
     </section>

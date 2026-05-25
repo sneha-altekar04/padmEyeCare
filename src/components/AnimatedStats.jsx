@@ -63,7 +63,6 @@ export default function AnimatedStats() {
         <h2>{t("stats_heading")}</h2>
         <div className="stats-grid">
           <Counter end={12} label="Years Experience" duration={1800} />
-          <Counter end={4200} label="Successful Surgeries" duration={2200} />
           <Counter end={700} label="No of Patients Per Month" duration={2000} />
           <Counter end={20000} label="Cataract Surgeries" duration={2400} />
           <Counter end={4000} label="Lid and Squint Surgeries" duration={2200} />
