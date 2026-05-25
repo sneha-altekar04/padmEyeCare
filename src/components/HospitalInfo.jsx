@@ -44,7 +44,7 @@ export default function HospitalInfo() {
           <aside className="doctor-left" aria-label="Doctor profile">
             <div className="doctor-portrait">
               <img
-                src="public/doctor-profile.jpg"
+                src="/doctor-profile.jpg"
                 alt="Dr. Vishal Vasant Patil"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
