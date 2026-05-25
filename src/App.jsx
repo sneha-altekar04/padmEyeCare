@@ -30,7 +30,6 @@ function HomePage() {
       <ServicesSlider />
       <Insurance />
       <AnimatedStats />
-      {/* <MapSection /> */}
       <Footer />
     </>
   );

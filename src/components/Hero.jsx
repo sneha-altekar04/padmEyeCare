@@ -191,7 +191,7 @@ export default function Hero() {
 
           <div className="hospital-photo-wrap">
             <img
-              src="/gallaryphotoes/hospital-image.jpg"
+              src="/galleryphotoes/hospital-image.jpg"
               alt="Padm Superspeciality Eye Care Hospital"
               className="hospital-photo"
             />
