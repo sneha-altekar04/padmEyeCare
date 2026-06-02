@@ -12,6 +12,41 @@ const EQUIPMENT = [
     name: "Topcon Autorefracto-Keratometer",
     desc: "Accurate measurement of eye power & corneal curvature",
   },
+  {
+    src: "/ourtechnology/Topcon%20OMS%2090%20Operating%20Microscope.jpg",
+    name: "Topcon OMS 90 Operating Microscope",
+    desc: "High-definition optics for precise surgical procedures",
+  },
+  {
+    src: "/ourtechnology/YAG%20Laser.jpg",
+    name: "YAG Laser",
+    desc: "Laser treatment for posterior capsule opacification & glaucoma",
+  },
+  {
+    src: "/ourtechnology/Slit%20Lamp.jpg",
+    name: "Slit Lamp",
+    desc: "Detailed examination of anterior & posterior eye segments",
+  },
+  {
+    src: "/ourtechnology/Non-Contact%20Tonometer.jpg",
+    name: "Non-Contact Tonometer",
+    desc: "Painless intraocular pressure measurement for glaucoma screening",
+  },
+  {
+    src: "/ourtechnology/Auto%20Refraction%20with%20Keratometer.jpg",
+    name: "Auto Refraction with Keratometer",
+    desc: "Automated measurement of refractive error & corneal curvature",
+  },
+  {
+    src: "/ourtechnology/A-Scan.jpg",
+    name: "A-Scan Biometry",
+    desc: "Ultrasound-based eye length measurement for IOL power calculation",
+  },
+  {
+    src: "/ourtechnology/Motorised%20Operating%20Table.jpg",
+    name: "Motorised Operating Table",
+    desc: "Fully adjustable surgical table for patient comfort & precision",
+  },
 ];
 
 export default function TechnologyPopup({ onClose }) {

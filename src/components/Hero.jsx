@@ -1,28 +1,31 @@
-﻿// import { useEffect, useState, useRef } from "react";
+﻿import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Clock, Phone, MapPin, Mail, Award } from "lucide-react";
+import { Clock, Phone, MapPin, Mail, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import "./Hero.css";
 
+const carouselImages = [
+  { src: "/galleryphotoes/hospital-image.jpg", alt: "Padm Eye Care Hospital Building" },
+  { src: "/Scroller/scroller 1.jpeg", alt: "Hospital Scroller Image 1" },
+  { src: "/Scroller/scroller 2.png", alt: "Hospital Scroller Image 2" },
+  { src: "/Scroller/scroller 3.jpeg", alt: "Hospital Scroller Image 3" },
+];
+
 export default function Hero() {
   const { t } = useTranslation();
-  // const carouselImages = [
-  //   "/gallaryphotoes/PUKT0034.JPG",
-  //   "/gallaryphotoes/PUKT0075.JPG",
-  //   "/gallaryphotoes/PUKT0233.JPG",
-  //   "/gallaryphotoes/PUKT0251.JPG",
-  //   "/gallaryphotoes/PUKT0321.JPG",
-  //   "/gallaryphotoes/PUKT0451.JPG",
-  // ];
-  // const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setActiveSlide((prev) => (prev + 1) % carouselImages.length);
-  //   }, 4200);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
 
-  //   return () => clearInterval(timer);
-  // }, [carouselImages.length]);
+  const goPrev = () =>
+    setActiveSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  const goNext = () =>
+    setActiveSlide((prev) => (prev + 1) % carouselImages.length);
 
   return (
     // <section className="hero" id="discover">
@@ -190,11 +193,36 @@ export default function Hero() {
           </div>
 
           <div className="hospital-photo-wrap">
-            <img
-              src="/galleryphotoes/hospital-image.jpg"
-              alt="Padm Superspeciality Eye Care Hospital"
-              className="hospital-photo"
-            />
+            <div className="hosp-carousel">
+              <div className="hosp-carousel-track">
+                {carouselImages.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img.src}
+                    alt={img.alt}
+                    className={`hosp-carousel-slide${activeSlide === i ? " active" : ""}`}
+                  />
+                ))}
+              </div>
+
+              <button className="hosp-carousel-btn prev" onClick={goPrev} aria-label="Previous slide">
+                <ChevronLeft size={20} />
+              </button>
+              <button className="hosp-carousel-btn next" onClick={goNext} aria-label="Next slide">
+                <ChevronRight size={20} />
+              </button>
+
+              <div className="hosp-carousel-dots">
+                {carouselImages.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`hosp-carousel-dot${activeSlide === i ? " active" : ""}`}
+                    onClick={() => setActiveSlide(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

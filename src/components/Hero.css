@@ -540,22 +540,109 @@
 .hospital-photo-wrap {
   border-radius: 20px;
   overflow: hidden;
-  min-height: 380px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   border: 1px solid #dbe7eb;
-  background: #fff;
-  display: flex;
+  background: transparent;
+  position: relative;
 }
 
-.hospital-photo {
+/* ── Carousel ── */
+.hosp-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hosp-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hosp-carousel-slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  opacity: 0;
+  transition: opacity 0.65s ease-in-out;
+  pointer-events: none;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
+.hosp-carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Prev / Next buttons — hidden by default, revealed on carousel hover */
+.hosp-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  z-index: 10;
+  transition: opacity 0.25s, background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+}
+
+.hosp-carousel:hover .hosp-carousel-btn {
+  opacity: 1;
+}
+
+.hosp-carousel-btn:hover {
+  background: rgba(15, 159, 168, 0.85);
+  border-color: rgba(15, 159, 168, 0.6);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(15,159,168,0.4);
+}
+
+.hosp-carousel-btn.prev { left: 14px; }
+.hosp-carousel-btn.next { right: 14px; }
+
+/* Dot indicators */
+.hosp-carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hosp-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.hosp-carousel-dot.active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
   .timing-ticker-label {
     display: none;
   }
@@ -564,9 +651,37 @@
     grid-template-columns: 1fr;
   }
 
-  .map-frame-wrap,
+  .map-frame-wrap {
+    min-height: 340px;
+  }
+
   .hospital-photo-wrap {
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-frame-wrap {
     min-height: 300px;
+  }
+
+  .hospital-photo-wrap {
+    height: 700px;
+    background: #f8fafc;
+  }
+
+  .hosp-carousel {
+    background: #f8fafc;
+  }
+
+  .hosp-carousel-slide {
+    object-fit: contain;
+    background: #f8fafc;
+  }
+
+  .hosp-carousel-btn {
+    width: 38px;
+    height: 38px;
   }
 }
 
@@ -577,6 +692,41 @@
 
   .hero-timing-card {
     padding: 22px 18px;
+  }
+
+  .map-frame-wrap {
+    min-height: 240px;
+  }
+
+  .hospital-photo-wrap {
+    height: 280px;
+    background: #f8fafc;
+  }
+
+  .hosp-carousel-slide {
+    object-fit: contain;
+    background: #f8fafc;
+  }
+
+  .hosp-carousel-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hosp-carousel-dots {
+    bottom: 8px;
+    gap: 6px;
+  }
+
+  .hosp-carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hospital-photo-wrap {
+    height: 200px;
   }
 }
 
