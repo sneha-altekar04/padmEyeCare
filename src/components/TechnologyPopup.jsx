@@ -47,6 +47,11 @@ const EQUIPMENT = [
     name: "Motorised Operating Table",
     desc: "Fully adjustable surgical table for patient comfort & precision",
   },
+  {
+    src: "/ourtechnology/Glocoma.jpeg",
+    name: "Glaucoma Evaluation System",
+    desc: "Advanced diagnostic equipment for glaucoma detection & monitoring",
+  },
 ];
 
 export default function TechnologyPopup({ onClose }) {
