@@ -1,7 +1,7 @@
 /* ===== SERVICES ===== */
 .services {
   padding: 80px 20px;
-  background: #f8fafc;
+  background: linear-gradient(135deg, #f0fdff 0%, #e0f8ff 100%);
   position: relative;
 }
 
@@ -43,6 +43,7 @@
 /* CARD */
 .service-card {
   background: white;
+  background-color: #ffffff;
   border-radius: 16px;
   padding: 28px 24px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.07);
@@ -54,6 +55,10 @@
   cursor: pointer;
   width: 100%;
   text-align: left;
+}
+
+button.service-card {
+  background-color: #ffffff;
 }
 
 .service-card:hover {

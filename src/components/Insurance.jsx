@@ -88,12 +88,6 @@ export default function Insurance() {
             );
           })}
         </div>
-
-        <div className="insurance-notice">
-          <span className="notice-icon">ℹ️</span>
-          <p>{t("insurance_note")}</p>
-        </div>
-
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ const education_en = [
   "Internship – KEM Hospital, Parel, Mumbai (2004–2005)",
   "D.O.M.S. – College of Physicians & Surgeons, MBPT Hospital, Mumbai (2007–2009)",
   "DNB (Ophthalmology) – Sankara Eye Hospital, Andhra Pradesh (2010–2012)",
-  "Fellowship (Pediatric Ophthalmology) – H.V. Desai Hospital, Pune (2012–2014)"
+  "Fellowship (Pediatric Ophthalmology) – H.V. Desai Hospital, Pune (2012–2014)",
 ];
 
 const education_mr = [
@@ -14,19 +14,19 @@ const education_mr = [
   "इंटर्नशिप – के. ई. एम. हॉस्पिटल, परेल, मुंबई (२००४–२००५)",
   "D.O.M.S. – कॉलेज ऑफ फिजिशियन अँड सर्जन, M.B.P.T. हॉस्पिटल, मुंबई (२००७–२००९)",
   "DNB (Ophthalmology) – शंकरा आय हॉस्पिटल, आंध्र प्रदेश (२०१०–२०१२)",
-  "Fellowship (Pediatric Ophthalmology) – एच. व्ही. देसाई हॉस्पिटल, पुणे (२०१२–२०१४)"
+  "Fellowship (Pediatric Ophthalmology) – एच. व्ही. देसाई हॉस्पिटल, पुणे (२०१२–२०१४)",
 ];
 
 const surgery_en = [
   "More than 20,000 cataract surgeries",
   "More than 4,000 lid and squint surgeries",
-  "More than 2,000 pediatric eye surgeries"
+  "More than 2,000 pediatric eye surgeries",
 ];
 
 const surgery_mr = [
   "२० हजार पेक्षा जास्त मोतीबिंदू शस्त्रक्रियांचा अनुभव",
   "४००० पेक्षा जास्त लासूर आणि पापण्यांच्या शस्त्रक्रियांचा अनुभव",
-  "२००० पेक्षा जास्त लहान मुलांच्या डोळ्यांच्या शस्त्रक्रियांचा अनुभव"
+  "२००० पेक्षा जास्त लहान मुलांच्या डोळ्यांच्या शस्त्रक्रियांचा अनुभव",
 ];
 
 export default function HospitalInfo() {
@@ -99,15 +99,24 @@ export default function HospitalInfo() {
               </div>
 
               <div className="info-card info-card-quote">
-                <p className="section-label">Patient care</p>
-                <h4>Compassionate pediatric eye care with a modern clinical approach.</h4>
+                <p className="section-label">Our Vision</p>
+                {/* <h4>Compassionate pediatric eye care with a modern clinical approach.</h4> */}
                 <p>
-                  Vision is crucial to how your child learns, plays, and grows. 
-                  Our pediatric ophthalmology department pairs the latest clinical innovations 
-                  and state-of-the-art imaging with a deep understanding of childhood development. 
-                  We deliver highly accurate diagnoses and tailored treatment plans, 
-                  all delivered by experts who know exactly how to make advanced clinical care feel like a 
-                  breeze for kids.
+                  Vision is crucial to how your child learns, plays and grows.
+                  Our hospital pairs the latest clinical innovations and
+                  state-of-the-art imaging with a deep understanding of
+                  childhood development. We deliver highly accurate diagnosis
+                  and tailored treatment plans, all delivered by Dr. Vishal
+                  Patil (Paediatric ophthalmologist) who knows exactly the best
+                  treatment plan for your child’s eye care.
+                </p>
+                
+                <p className="section-label">Our Mission</p>
+                <p>
+                  We at Padm Superspeciality eye care work to provide
+                  accessible, affordable, and world-class eye care with
+                  compassion, innovation, and integrity. We envision a society
+                  where no one loses sight due to lack of care.
                 </p>
               </div>
             </div>

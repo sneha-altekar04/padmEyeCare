@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Menu, X, Mail } from "lucide-react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import TechnologyPopup from "./TechnologyPopup";
 import "./navbar.css";
@@ -107,13 +107,22 @@ export default function Navbar() {
             <MapPin size={18} />
           </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/padmeyecarepen?igsh=MXhmcm9jYjJ4aGp5Zw=="
             className="icon"
             title="Instagram"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagram size={16} />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100066816640081&name=xhp_nt__fb__action__open_user"
+            className="icon"
+            title="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF size={16} />
           </a>
           <a href="mailto:padmeyecare@gmail.com" className="icon" title="Email">
             <Mail size={16} />
@@ -180,6 +189,7 @@ export default function Navbar() {
           <a href="tel:7030775791" className="mobile-icon-btn" title="Call Us"><Phone size={18} /></a>
           <a href="/#contact" className="mobile-icon-btn" title="Location" onClick={(e) => handleSectionNavigation(e, "/#contact")}><MapPin size={18} /></a>
           <a href="https://www.instagram.com" className="mobile-icon-btn" title="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram size={18} /></a>
+          <a href="https://www.facebook.com" className="mobile-icon-btn" title="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF size={18} /></a>
           <a href="mailto:padmeyecare@gmail.com" className="mobile-icon-btn" title="Email"><Mail size={18} /></a>
         </div>
       </div>

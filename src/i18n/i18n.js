@@ -54,16 +54,13 @@ const resources = {
 
       insurance_heading: "Cashless Insurance Partners",
       insurance_sub: "Available cashless empanelment in our hospital",
-      insurance_note:
-        "For cataract surgery cashless facility, inform doctor before operation. Bills from government offices, court, police and district bodies are not the hospital's responsibility.",
-
       contact_heading: "Find Us",
       contact_address:
         "Plot No. 40, Anand Nagar, Behind Gajanan Maharaj Temple, Ramwadi, Pen - 402107",
       contact_phone1: "7030775791",
       contact_phone2: "9859853853",
       contact_email: "padmeyecare@gmail.com",
-      contact_doctor_reg_label: "Doctor Registration",
+      contact_doctor_reg_label: "Hospital Registration",
       contact_doctor_reg_value: "MH/RAI/NH1132",
 
       footer_rights:
@@ -123,8 +120,6 @@ const resources = {
 
       insurance_heading: "कॅशलेस विमा भागीदार",
       insurance_sub: "आमच्या रुग्णालयात उपलब्ध कॅशलेस एम्पॅनेलमेंट",
-      insurance_note:
-        "मोतीबिंदू शस्त्रक्रियेसाठी कॅशलेस सुविधा उपलब्ध आहे. ऑपरेशनच्या आधी डॉक्टरांना कळवणे बंधनकारक आहे. सरकारी कार्यालय, कोर्ट, पोलीस आणि इतर जिल्हा परिषदेचे बिल पास होण्याची जबाबदारी हॉस्पिटलची राहणार नाही.",
 
       contact_heading: "आम्हाला शोधा",
       contact_address:

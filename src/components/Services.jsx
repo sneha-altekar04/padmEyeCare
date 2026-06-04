@@ -52,7 +52,7 @@ const serviceData = [
     desc_mr: "टोनोमीटर, ट्रॅब शस्त्रक्रिया, YAG PI",
     details_en: "Regular pressure monitoring and long-term glaucoma management with medical and surgical plans.",
     details_mr: "नियमित प्रेशर मॉनिटरिंग आणि औषध/शस्त्रक्रियेच्या दीर्घकालीन व्यवस्थापनाची योजना.",
-    images: ["/glaucoma.jpg", "/checkup.jpg", "/hero-eye.jpg"]
+    images: ["glocoma.jpeg", "/checkup.jpg", "/hero-eye.jpg"]
   },
   {
     icon: "⚡",
@@ -73,7 +73,18 @@ const serviceData = [
     details_en: "Detailed corneal workup and vision correction pathway for suitable candidates.",
     details_mr: "योग्य उमेदवारांसाठी कॉर्नियल वर्कअप आणि दृष्टी सुधारण्यासाठी टप्प्याटप्प्याची प्रक्रिया.",
     images: ["/lasik.jpg", "/laser.jpg", "/hero-eye.jpg"]
-  }
+  },
+  {
+    icon: "🧒",
+    en: "Paediatric Ophthalmology",
+    mr: "बाल नेत्ररोग सेवा",
+    desc_en: "Specialized eye care for infants, children, and visual development",
+    desc_mr: "लहान मुले, शिशू आणि दृष्टी विकासासाठी विशेष नेत्रसेवा",
+    details_en: "Focused diagnosis and treatment for squint, lazy eye, childhood cataract, and other pediatric eye conditions in a child-friendly setting.",
+    details_mr: "तिरळेपणा, आळशी डोळा, बाल मोतीबिंदू आणि इतर बाल नेत्रसमस्यांसाठी मुलांसाठी अनुकूल वातावरणात निदान व उपचार.",
+    images: ["/doctor.jpg", "/checkup.jpg", "/hero-eye.jpg"]
+  },
+  
 ];
 
 export default function Services() {

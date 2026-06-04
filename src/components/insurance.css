@@ -1,7 +1,7 @@
 /* ===== INSURANCE ===== */
 .insurance {
   padding: 80px 20px;
-  background: #f0fdfa;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%);
 }
 
 .insurance-container {
