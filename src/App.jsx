@@ -14,10 +14,24 @@ import ChatWidget from "./components/ChatWidget";
 import "./styles/global.css";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Wait for React to finish rendering the new page before scrolling
+      const id = hash.replace("#", "");
+      const attempt = (tries = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (tries < 10) {
+          setTimeout(() => attempt(tries + 1), 80);
+        }
+      };
+      setTimeout(() => attempt(), 80);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 }
 

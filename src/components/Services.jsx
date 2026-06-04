@@ -10,8 +10,8 @@ const serviceData = [
     mr: "संगणकाद्वारे डोळे तपासणी",
     desc_en: "Advanced computerised examination for accurate diagnosis",
     desc_mr: "अचूक निदानासाठी अत्याधुनिक संगणक तपासणी",
-    details_en: "Includes vision screening, refraction, slit lamp evaluation, and digital records.",
-    details_mr: "व्हिजन स्क्रीनिंग, रेफ्रॅक्शन, स्लिट लॅम्प तपासणी आणि डिजिटल नोंदींचा समावेश.",
+    details_en: "Includes vision screening, refraction, slit lamp evaluation, and digital records by ophthalmologist",
+    details_mr: "नेत्रतज्ज्ञाद्वारे दृष्टी तपासणी, अपवर्तन (Refraction) तपासणी, स्लिट लॅम्प तपासणी आणि डिजिटल नोंदींचा समावेश.",
     images: ["/checkup.jpg", "/hero-eye.jpg", "/doctor.jpg"]
   },
   {
@@ -20,8 +20,8 @@ const serviceData = [
     mr: "मोतीबिंदू निदान व उपचार",
     desc_en: "Slit lamp, A Scan, Phacoemulsification (SICS)",
     desc_mr: "स्लिट लॅम्प, A स्कॅन, प्रगत फेकोइमल्सिफिकेशन, SICS",
-    details_en: "From diagnosis to surgery planning with foldable lens options and post-op follow-up.",
-    details_mr: "निदानापासून शस्त्रक्रिया नियोजन, फोल्डेबल लेन्स पर्याय आणि पोस्ट-ऑप फॉलोअपपर्यंत सेवा.",
+    details_en: "We help you to diagnose and evaluate complete cataract condition along with treatment planning. Evaluation includes auto refraction and keratometry, slit-lamp examination, A-scan and fundus examination. We provide all surgical options, including basic to premium lenses with phacoemulsification technique.",
+    details_mr: "आम्ही तुम्हाला मोतीबिंदूच्या संपूर्ण स्थितीचे निदान आणि मूल्यांकन करण्याबरोबरच उपचारांचे नियोजन करण्यास मदत करतो. या मूल्यांकनामध्ये ऑटो रिफ्रॅक्शन आणि केराटोमेट्री, स्लिट-लॅम्प तपासणी, ए-स्कॅन आणि फंडस तपासणी यांचा समावेश असतो. आम्ही फॅकोइमल्सिफिकेशन तंत्रासह, बेसिक ते प्रीमियम लेन्सपर्यंतचे सर्व शस्त्रक्रिया पर्याय उपलब्ध करून देतो.",
     images: ["/cataract.jpg", "/checkup.jpg", "/hero-eye.jpg"]
   },
   {
@@ -30,7 +30,7 @@ const serviceData = [
     mr: "रेटिना / मधुमेह डोळा तपासणी",
     desc_en: "Fundus examination, OCT, Intra-Vitreal Injection",
     desc_mr: "फंडस तपासणी, OCT, इंट्रा-विट्रियल इंजेक्शन",
-    details_en: "Specialized retina evaluation for diabetic retinopathy, macular issues, and early intervention.",
+    details_en: "Steps in retina evaluation for diabetic patient\n\n• Vision evaluation\n• Dilated fundus examination\n• OCT (optical coherence tomography)\n\nTreatment options\n• Anti- vegf injections\n• Laser PRP",
     details_mr: "डायबेटिक रेटिनोपथी, मॅक्युला समस्या आणि लवकर हस्तक्षेपासाठी विशेष तपासणी.",
     images: ["/retina.jpg", "/hero-eye.jpg", "/checkup.jpg"]
   },
@@ -50,16 +50,16 @@ const serviceData = [
     mr: "काचबिंदू निदान व उपचार",
     desc_en: "Tonometer, Trab Surgery, Applanation, YAG PI",
     desc_mr: "टोनोमीटर, ट्रॅब शस्त्रक्रिया, YAG PI",
-    details_en: "Regular pressure monitoring and long-term glaucoma management with medical and surgical plans.",
-    details_mr: "नियमित प्रेशर मॉनिटरिंग आणि औषध/शस्त्रक्रियेच्या दीर्घकालीन व्यवस्थापनाची योजना.",
+    details_en: "Regular pressure monitoring and long-term glaucoma management with medical and surgical plans.\n\nDiagnosis:\n•	Non-Contact Tonometer\n•	Applanation Tonometer\n",
+    details_mr: "दाबाचे नियमित निरीक्षण आणि वैद्यकीय व शस्त्रक्रियात्मक उपायांद्वारे काचबिंदूचे दीर्घकालीन व्यवस्थापन.\n\nनिदान:\n•	नॉन-कॉन्टॅक्ट टोनोमीटर\n•	ॲप्लनेशन टोनोमीटर",
     images: ["glocoma.jpeg", "/checkup.jpg", "/hero-eye.jpg"]
   },
   {
     icon: "⚡",
     en: "Laser Facility & Treatment",
     mr: "लेझरद्वारे उपचार",
-    desc_en: "YAG Laser, Green Laser",
-    desc_mr: "YAG लेझर, ग्रीन लेझर",
+    desc_en: "•	Yag laser for yag capsulectomy and yag PI\n•	Green laser for retina",
+    desc_mr: "•	YAG कॅप्सुलेक्टमी आणि YAG PI साठी YAG लेझर\n•	रेटिनासाठी ग्रीन लेझर",
     details_en: "In-clinic laser procedures for retina and anterior segment conditions with quick recovery.",
     details_mr: "रेटिना आणि अँटेरियर सेगमेंट समस्यांसाठी क्लिनिकमध्येच लेझर उपचार आणि जलद पुनर्वसन.",
     images: ["/laser.jpg", "/retina.jpg", "/hero-eye.jpg"]
@@ -80,8 +80,8 @@ const serviceData = [
     mr: "बाल नेत्ररोग सेवा",
     desc_en: "Specialized eye care for infants, children, and visual development",
     desc_mr: "लहान मुले, शिशू आणि दृष्टी विकासासाठी विशेष नेत्रसेवा",
-    details_en: "Focused diagnosis and treatment for squint, lazy eye, childhood cataract, and other pediatric eye conditions in a child-friendly setting.",
-    details_mr: "तिरळेपणा, आळशी डोळा, बाल मोतीबिंदू आणि इतर बाल नेत्रसमस्यांसाठी मुलांसाठी अनुकूल वातावरणात निदान व उपचार.",
+    details_en: "Focused diagnosis and treatment for squint, lazy eye, childhood cataract, and other pediatric eye conditions in a child-friendly setting.\n\nPaediatric Squint Surgeries\n•	Patching therapy of amblyopia \n•	Myopia control treatment",
+    details_mr: "तिरळेपणा, आळशी डोळा, बाल मोतीबिंदू आणि इतर बाल नेत्रसमस्यांसाठी मुलांसाठी अनुकूल वातावरणात निदान व उपचार.\n\nलहान मुलांच्या तिरळेपणावरील शस्त्रक्रिया\n•	अ‍ॅम्ब्लिओपियासाठी 'पॅचिंग' उपचारपद्धती\n•	लघुदृष्टी नियंत्रणाचे उपचार",
     images: ["/doctor.jpg", "/checkup.jpg", "/hero-eye.jpg"]
   },
   

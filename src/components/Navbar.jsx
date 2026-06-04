@@ -37,10 +37,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { label: "Doctors", href: "/#doctor" },
+    { label: "Treatments", href: "/#treatments" },
     { label: "Technology", href: "/#services" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Treatments", href: "/#treatments" },
-    { label: "Doctors", href: "/#doctor" },
     { label: "Insurance", href: "/#insurance" },
     { label: "Contact", href: "/#contact" },
   ];
