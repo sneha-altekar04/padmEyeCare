@@ -12,7 +12,7 @@ const serviceData = [
     desc_mr: "अचूक निदानासाठी अत्याधुनिक संगणक तपासणी",
     details_en: "Includes vision screening, refraction, slit lamp evaluation, and digital records by ophthalmologist",
     details_mr: "नेत्रतज्ज्ञाद्वारे दृष्टी तपासणी, अपवर्तन (Refraction) तपासणी, स्लिट लॅम्प तपासणी आणि डिजिटल नोंदींचा समावेश.",
-    images: ["/checkup.jpg", "/hero-eye.jpg", "/doctor.jpg"]
+    images: ["/computerised-eye-check-up.jpeg"]
   },
   {
     icon: "🔬",
@@ -22,7 +22,7 @@ const serviceData = [
     desc_mr: "स्लिट लॅम्प, A स्कॅन, प्रगत फेकोइमल्सिफिकेशन, SICS",
     details_en: "We help you to diagnose and evaluate complete cataract condition along with treatment planning. Evaluation includes auto refraction and keratometry, slit-lamp examination, A-scan and fundus examination. We provide all surgical options, including basic to premium lenses with phacoemulsification technique.",
     details_mr: "आम्ही तुम्हाला मोतीबिंदूच्या संपूर्ण स्थितीचे निदान आणि मूल्यांकन करण्याबरोबरच उपचारांचे नियोजन करण्यास मदत करतो. या मूल्यांकनामध्ये ऑटो रिफ्रॅक्शन आणि केराटोमेट्री, स्लिट-लॅम्प तपासणी, ए-स्कॅन आणि फंडस तपासणी यांचा समावेश असतो. आम्ही फॅकोइमल्सिफिकेशन तंत्रासह, बेसिक ते प्रीमियम लेन्सपर्यंतचे सर्व शस्त्रक्रिया पर्याय उपलब्ध करून देतो.",
-    images: ["/cataract.jpg", "/checkup.jpg", "/hero-eye.jpg"]
+    images: ["/cataract-diagnosis-and-treatment.jpeg"]
   },
   {
     icon: "🩺",
@@ -32,7 +32,7 @@ const serviceData = [
     desc_mr: "फंडस तपासणी, OCT, इंट्रा-विट्रियल इंजेक्शन",
     details_en: "Steps in retina evaluation for diabetic patient\n\n• Vision evaluation\n• Dilated fundus examination\n• OCT (optical coherence tomography)\n\nTreatment options\n• Anti- vegf injections\n• Laser PRP",
     details_mr: "डायबेटिक रेटिनोपथी, मॅक्युला समस्या आणि लवकर हस्तक्षेपासाठी विशेष तपासणी.",
-    images: ["/retina.jpg", "/hero-eye.jpg", "/checkup.jpg"]
+    images: ["/retina-and-diabetic-eye-check-up.jpeg"]
   },
   {
     icon: "👀",
@@ -42,7 +42,7 @@ const serviceData = [
     desc_mr: "तिरळेपणा सुधारणा व पापण्यांच्या शस्त्रक्रिया",
     details_en: "Functional and cosmetic correction for squint, droopy eyelids, and periocular conditions.",
     details_mr: "तिरळेपणा, पापणी समस्या आणि डोळ्याभोवतीच्या स्थितींसाठी कार्यात्मक व सौंदर्यात्मक उपचार.",
-    images: ["/doctor.jpg", "/checkup.jpg", "/hero-eye.jpg"]
+    images: ["/squint-and-oculoplasty.jpeg"]
   },
   {
     icon: "💧",
@@ -62,7 +62,7 @@ const serviceData = [
     desc_mr: "•	YAG कॅप्सुलेक्टमी आणि YAG PI साठी YAG लेझर\n•	रेटिनासाठी ग्रीन लेझर",
     details_en: "In-clinic laser procedures for retina and anterior segment conditions with quick recovery.",
     details_mr: "रेटिना आणि अँटेरियर सेगमेंट समस्यांसाठी क्लिनिकमध्येच लेझर उपचार आणि जलद पुनर्वसन.",
-    images: ["/laser.jpg", "/retina.jpg", "/hero-eye.jpg"]
+    images: ["/laser-facility-and-treatment.jpeg"]
   },
   {
     icon: "✨",
@@ -72,7 +72,7 @@ const serviceData = [
     desc_mr: "लेझरद्वारे चष्म्याचे नंबर घालवणे",
     details_en: "Detailed corneal workup and vision correction pathway for suitable candidates.",
     details_mr: "योग्य उमेदवारांसाठी कॉर्नियल वर्कअप आणि दृष्टी सुधारण्यासाठी टप्प्याटप्प्याची प्रक्रिया.",
-    images: ["/lasik.jpg", "/laser.jpg", "/hero-eye.jpg"]
+    images: ["/lasik.jpeg"]
   },
   {
     icon: "🧒",
@@ -82,7 +82,7 @@ const serviceData = [
     desc_mr: "लहान मुले, शिशू आणि दृष्टी विकासासाठी विशेष नेत्रसेवा",
     details_en: "Focused diagnosis and treatment for squint, lazy eye, childhood cataract, and other pediatric eye conditions in a child-friendly setting.\n\nPaediatric Squint Surgeries\n•	Patching therapy of amblyopia \n•	Myopia control treatment",
     details_mr: "तिरळेपणा, आळशी डोळा, बाल मोतीबिंदू आणि इतर बाल नेत्रसमस्यांसाठी मुलांसाठी अनुकूल वातावरणात निदान व उपचार.\n\nलहान मुलांच्या तिरळेपणावरील शस्त्रक्रिया\n•	अ‍ॅम्ब्लिओपियासाठी 'पॅचिंग' उपचारपद्धती\n•	लघुदृष्टी नियंत्रणाचे उपचार",
-    images: ["/doctor.jpg", "/checkup.jpg", "/hero-eye.jpg"]
+    images: ["/pediatric-ophthalmology.jpeg"]
   },
   
 ];
