@@ -52,7 +52,7 @@ const serviceData = [
     desc_mr: "टोनोमीटर, ट्रॅब शस्त्रक्रिया, YAG PI",
     details_en: "Regular pressure monitoring and long-term glaucoma management with medical and surgical plans.\n\nDiagnosis:\n•	Non-Contact Tonometer\n•	Applanation Tonometer\n",
     details_mr: "दाबाचे नियमित निरीक्षण आणि वैद्यकीय व शस्त्रक्रियात्मक उपायांद्वारे काचबिंदूचे दीर्घकालीन व्यवस्थापन.\n\nनिदान:\n•	नॉन-कॉन्टॅक्ट टोनोमीटर\n•	ॲप्लनेशन टोनोमीटर",
-    images: ["glocoma.jpeg", "/checkup.jpg", "/hero-eye.jpg"]
+    images: ["glocoma.jpeg"]
   },
   {
     icon: "⚡",
