@@ -110,6 +110,18 @@
   margin: 0 0 8px;
 }
 
+.logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.company-name {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  vertical-align: middle;
+}
 .footer-note {
   color: #fca5a5 !important;
   font-weight: 600;
@@ -119,14 +131,38 @@
 /* BOTTOM BAR */
 .footer-bottom {
   border-top: 1px solid #1e293b;
-  padding: 20px;
-  text-align: center;
+  padding: 18px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .footer-bottom p {
   font-size: 13px;
   color: #64748b;
   margin: 0;
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.footer-company-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-bottom-right {
+  text-align: right;
+  white-space: nowrap;
 }
 
 /* ===== MOBILE ===== */
@@ -149,5 +185,16 @@
 
   .footer-brand {
     grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-bottom-right {
+    text-align: left;
+    white-space: normal;
   }
 }

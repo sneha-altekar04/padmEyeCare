@@ -51,7 +51,13 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>{t("footer_rights")}</p>
+        <div className="footer-bottom-left">
+          <span>Developed By</span>
+          <a href="mailto:techwisesolutions2026@gmail.com" className="footer-company-link" aria-label="Contact Techwise Solutions">
+            <img src="/company-logo.png" alt="Techwise Solutions" className="logo" /> <span className="company-name">Techwise Solutions</span>
+          </a>
+        </div>
+        <p className="footer-bottom-right">{t("footer_rights")}</p>
       </div>
 
       {showTech && <TechnologyPopup onClose={() => setShowTech(false)} />}
